@@ -1,0 +1,21 @@
+// Declare a variable
+let x = 10;
+
+// Use assignment operators
+x += 5;  // This is equivalent to x = x + 5
+console.log("After += : " + x);  // 15
+
+x -= 3;  // This is equivalent to x = x - 3
+console.log("After -= : " + x);  // 12
+
+x *= 2;  // This is equivalent to x = x * 2
+console.log("After *= : " + x);  // 24
+
+x /= 4;  // This is equivalent to x = x / 4
+console.log("After /= : " + x);  // 6
+
+x %= 5;  // This is equivalent to x = x % 5 (remainder)
+console.log("After %= : " + x);  // 1
+
+x **= 3;  // This is equivalent to x = x ** 3 (exponentiation)
+console.log("After **= : " + x);  // 1
