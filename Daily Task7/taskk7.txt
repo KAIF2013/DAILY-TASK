@@ -1,0 +1,21 @@
+let number = 1;
+console.log(typeof(number));
+
+let name = "kaif"
+console.log(typeof(name))
+
+let boolean = true;
+console.log(typeof(boolean));
+
+let val = null;
+console.log(typeof(val));
+
+let obj = {
+    name: "kaif",
+    age: 22,
+
+};
+console.log(typeof(obj));
+
+let val2 = undefined;
+console.log(typeof(val2));
