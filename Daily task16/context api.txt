@@ -1,0 +1,52 @@
+import React, { createContext, useContext, useState } from 'react';
+import { Button } from "@/components/ui/button";
+
+// Create Theme Context
+const ThemeContext = createContext();
+
+// Theme Provider
+const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+// Custom hook to use Theme Context
+const useTheme = () => {
+  return useContext(ThemeContext);
+};
+
+// Main App Component
+const App = () => {
+  return (
+    <ThemeProvider>
+      <Main />
+    </ThemeProvider>
+  );
+};
+
+// Main Component
+const Main = () => {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <div className={`min-h-screen flex items-center justify-center ${theme === 'light' ? 'bg-white text-black' : 'bg-gray-900 text-white'}`}>
+      <div className="p-6 rounded-2xl shadow-lg border text-center">
+        <h1 className="text-2xl font-bold mb-4">{`Current Theme: ${theme}`}</h1>
+        <Button onClick={toggleTheme} className="mt-4">
+          Toggle Theme
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+export default App;
